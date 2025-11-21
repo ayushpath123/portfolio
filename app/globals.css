@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 216 33% 97%;
+  --muted: 240 16% 18%;
+  --accent: 223 93% 53%;
+  --card: 240 16% 12%;
+  --border: 240 16% 22%;
+  --ring: 267 83% 70%;
+  --primary: 267 100% 71%;
+  --primary-foreground: 229 84% 5%;
+  --secondary: 199 89% 48%;
+  --secondary-foreground: 210 40% 12%;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  background-color: #000000;
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  background-color: #000000;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+.glass-panel {
+  border: 1px solid color-mix(in srgb, hsl(var(--foreground)) 8%, transparent);
+  background: color-mix(
+    in srgb,
+    hsl(var(--background)) 65%,
+    rgba(255, 255, 255, 0.08)
+  );
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.35);
+}
+
+.text-gradient {
+  background-image: linear-gradient(120deg, #a855f7, #38bdf8 60%, #f472b6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background-image: linear-gradient(120deg, #a855f7, #38bdf8 60%, #f472b6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtle-border {
+  border: 1px solid color-mix(in srgb, hsl(var(--foreground)) 12%, transparent);
+}
+
+.grid-accent {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, hsl(var(--foreground)) 5%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, hsl(var(--foreground)) 5%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 70%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}

@@ -110,7 +110,7 @@ export const projects: Project[] = [
       "AI code review + debugging improvements shipped faster.",
     ],
     github: "https://github.com/ayushpath123/Code_Assistant",
-    live: "",
+    live: "https://cursora.vercel.app/",
   },
   {
     title: "LinkIT",

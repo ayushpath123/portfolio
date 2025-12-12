@@ -54,14 +54,15 @@ export const skillCategories: SkillCategory[] = [
 
 export const experiences: ExperienceEntry[] = [
   {
-    company: "VideoSDK",
+    company: "ENTNT",
     role: "Software Developer Intern",
-    period: "Oct 2025 – Present",
+    period: "Dec 2025 – Present",
     bullets: [
-      "Designing scalable real-time communication products using WebRTC.",
-      "Full-stack work with React.js, Node.js, WebRTC APIs.",
-      "Building high-performance APIs & distributed backend systems.",
+      "Building AI-driven software products for global clients.",
+      "Full-stack development across analysis, implementation, and deployment.",
+      "Delivering scalable, high-quality solutions with distributed teams.",
     ],
+    
     stack: ["WebRTC", "React.js", "Node.js", "Distributed Systems"],
   },
   {
@@ -108,7 +109,7 @@ export const projects: Project[] = [
       "RAG pipeline using Pinecone for code context retrieval.",
       "AI code review + debugging improvements shipped faster.",
     ],
-    github: "https://github.com/ayushpath123/ai-code-assistant",
+    github: "https://github.com/ayushpath123/Code_Assistant",
     live: "",
   },
   {

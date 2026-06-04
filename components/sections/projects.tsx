@@ -1,82 +1,55 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { projects } from "@/data/portfolio";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="space-y-8">
-      <div className="flex flex-col gap-2">
-        <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-          Selected builds
-        </p>
-        <h2 className="section-heading">Projects that ship value</h2>
-      </div>
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <motion.div
+    <section id="work" className="work w-full py-24">
+      <h2
+        className="section__title mb-12 min-h-[1.4em] border-b border-[#4a4744] pb-4 text-xl tracking-wide text-[#f0ede8]"
+        data-typewriter="selected work_"
+      />
+
+      <div className="projects flex flex-col gap-0">
+        {projects.map((project) => (
+          <article
             key={project.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            viewport={{ once: true }}
+            className="project border-b border-[#2a2724] py-8 pl-0 transition-[padding-left] duration-[250ms] hover:pl-4"
           >
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2 text-xs">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-white/80"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <ul className="space-y-2 text-sm text-white/80">
-                  {project.highlights.map((highlight) => (
-                    <li key={highlight} className="flex gap-2">
-                      <span className="text-indigo-300">▹</span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="glass" size="sm">
-                  <Link href={project.live} target="_blank">
-                    Live preview
-                    <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href={project.github} target="_blank">
-                    <Github className="h-4 w-4" />
-                    GitHub
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+            <div className="project__meta mb-3 flex gap-6 text-xs uppercase tracking-wide text-[#4a4744]">
+              <span className="project__year">{project.year}</span>
+              <span className="project__tags">
+                {project.stack.join(" · ").toLowerCase()}
+              </span>
+            </div>
+            <h3 className="project__title m-0 mb-3 text-lg font-medium text-[#f0ede8]">
+              {project.title}
+            </h3>
+            <p className="project__desc mb-4 max-w-[520px] text-sm leading-[var(--leading-loose)] text-[#8a8680]">
+              {project.description}{" "}
+              {project.highlights[0]}
+            </p>
+            <div className="project__links flex gap-6">
+              <Link
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-wide text-[#4a4744] no-underline transition-colors duration-200 hover:text-[#f0ede8]"
+              >
+                live ↗
+              </Link>
+              <Link
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-wide text-[#4a4744] no-underline transition-colors duration-200 hover:text-[#f0ede8]"
+              >
+                github ↗
+              </Link>
+            </div>
+          </article>
         ))}
       </div>
     </section>
   );
 }
-

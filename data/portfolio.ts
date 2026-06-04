@@ -1,19 +1,16 @@
-import { Brain, Code2, Globe, Layers, Server } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
-export type SkillCategory = {
-  name: string;
-  icon: LucideIcon;
-  items: string[];
-};
-
 export type Project = {
   title: string;
+  year: string;
   stack: string[];
   description: string;
   highlights: string[];
   github: string;
   live: string;
+};
+
+export type Stat = {
+  value: string;
+  label: string;
 };
 
 export type ExperienceEntry = {
@@ -24,32 +21,31 @@ export type ExperienceEntry = {
   stack: string[];
 };
 
-export const skillCategories: SkillCategory[] = [
-  {
-    name: "Languages",
-    icon: Code2,
-    items: ["TypeScript", "JavaScript", "C++", "C", "SQL", "Python"],
-  },
-  {
-    name: "Frameworks",
-    icon: Layers,
-    items: ["React", "Next.js", "Express", "Hono", "Node.js", "Prisma", "NextAuth"],
-  },
-  {
-    name: "Databases",
-    icon: Server,
-    items: ["PostgreSQL", "MongoDB", "Pinecone"],
-  },
-  {
-    name: "AI Tools",
-    icon: Brain,
-    items: ["LangChain", "AutoGen", "OpenAI", "Vector Stores", "RAG", "MCP Servers"],
-  },
-  {
-    name: "Web Stack",
-    icon: Globe,
-    items: ["HTML", "CSS", "Tailwind"],
-  },
+export const skills = [
+  "TypeScript",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Python",
+  "PostgreSQL",
+  "MongoDB",
+  "LangChain",
+  "Docker",
+  "AWS",
+];
+
+export const aboutStats: Stat[] = [
+  { value: "3+", label: "years experience" },
+  { value: "4+", label: "projects shipped" },
+  { value: "800+", label: "dsa problems solved" },
+];
+
+export const heroTypewriterPhrases = [
+  "full-stack developer",
+  "ai engineer",
+  "open source contributor",
+  "problem solver",
 ];
 
 export const experiences: ExperienceEntry[] = [
@@ -92,6 +88,7 @@ export const experiences: ExperienceEntry[] = [
 export const projects: Project[] = [
   {
     title: "Mail.ai",
+    year: "2025",
     stack: ["Next.js", "Prisma", "Redis", "BullMQ", "Stripe"],
     description: "AI-powered bulk email platform using Groq SDK.",
     highlights: [
@@ -103,6 +100,7 @@ export const projects: Project[] = [
   },
   {
     title: "AI Code Assistant",
+    year: "2025",
     stack: ["Python", "LangChain", "GPT-4", "Pinecone", "FastAPI"],
     description: "Multi-language AI code assistant for reviews & debugging.",
     highlights: [
@@ -114,6 +112,7 @@ export const projects: Project[] = [
   },
   {
     title: "LinkIT",
+    year: "2024",
     stack: ["Next.js", "NextAuth", "React", "Prisma"],
     description: "A modern link-in-bio and link management platform.",
     highlights: [
@@ -126,6 +125,7 @@ export const projects: Project[] = [
   },
   {
     title: "Confesr",
+    year: "2024",
     stack: ["Hono", "Cloudflare Workers", "Prisma", "React"],
     description: "An anonymous confession platform built for privacy and speed.",
     highlights: [
@@ -148,9 +148,12 @@ export const achievements = [
 
 export const heroContent = {
   name: "Ayush Pathak",
-  role: "Software Developer | AI & Full-Stack Engineer",
   summary:
-    "Shipping realtime communication, AI-native automation, and resilient cloud systems with a product-first mindset.",
+    "I build things for the web. Focused on clean code, realtime systems, AI copilots, and infrastructure that scales.",
+  aboutParagraphs: [
+    "I'm Ayush Pathak, a Data Science & AI student at IIIT Dharwad who ships developer experiences across product design, backend systems, and AI-first features — from NLQ copilots at Dentsu to TypeScript migrations at DataAstraa.",
+    "My work spans multi-tenant SaaS dashboards, resilient messaging rails, Stripe-powered monetization, and Pinecone-backed RAG copilots. Every project blends strong UX, measurable performance wins, and production reliability.",
+  ],
   contact: {
     phone: "+91 9316568042",
     email: "22bds044@iiitdwd.ac.in",

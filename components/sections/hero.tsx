@@ -25,11 +25,10 @@ export function HeroSection() {
           view work →
         </Link>
         <Link
-          href="/resume.pdf"
-          download
+          href="/resume"
           className="btn btn--ghost inline-flex items-center border border-[#4a4744] bg-transparent px-6 py-3 font-mono text-sm tracking-wide text-[#8a8680] no-underline transition-colors duration-200 hover:border-[#f0ede8] hover:bg-transparent hover:text-[#f0ede8]"
         >
-          résumé ↗
+          résumé →
         </Link>
       </div>
     </section>

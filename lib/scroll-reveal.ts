@@ -14,7 +14,7 @@ export function initScrollReveal() {
   );
 
   document
-    .querySelectorAll(".project, .stat, .skills__list span")
+    .querySelectorAll(".project, .experience-entry, .stat, .skills__list span")
     .forEach((el) => observer.observe(el));
 
   return () => observer.disconnect();

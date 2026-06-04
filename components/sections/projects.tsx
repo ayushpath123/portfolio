@@ -7,7 +7,7 @@ export function ProjectsSection() {
     <section id="work" className="work w-full py-24">
       <h2
         className="section__title mb-12 min-h-[1.4em] border-b border-[#4a4744] pb-4 text-xl tracking-wide text-[#f0ede8]"
-        data-typewriter="selected work_"
+        
       />
 
       <div className="projects flex flex-col gap-0">
